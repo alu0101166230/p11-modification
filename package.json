@@ -7,6 +7,10 @@
     "test": "mocha",
     "coverage": "nyc npm test && nyc report --reporter=lcov",
     "start": "tsc-watch --onSuccess \"node dist/index.js\"",
+    "create": "tsc-watch --onSuccess \"node dist/createUser.js\"",
+    "search": "tsc-watch --onSuccess \"node dist/searchUser.js\"",
+    "update": "tsc-watch --onSuccess \"node dist/updateUser.js\"",
+    "remove": "tsc-watch --onSuccess \"node dist/removeUser.js\"",
     "doc": "typedoc; touch ./docs/.nojekyll"
   },
   "keywords": [],

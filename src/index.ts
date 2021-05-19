@@ -1,7 +1,8 @@
 import * as mongoose from 'mongoose';
 import validator from 'validator';
 
-mongoose.connect('mongodb://127.0.0.1:27017/user', {
+mongoose.connect('mongodb://127.0.0.1:27017/user2', {
+  useFindAndModify: true,
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
@@ -18,7 +19,7 @@ interface UserInterface {
   password: string
 }
 
-const UserSchema = new mongoose.Schema({
+export const UserSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -50,7 +51,7 @@ const UserSchema = new mongoose.Schema({
   },
 });
 
-const User = mongoose.model<UserInterface>('User', UserSchema);
+export const User = mongoose.model<UserInterface>('User', UserSchema);
 
 // const user = new User({
 //   name: 'joel',
@@ -73,17 +74,23 @@ const User = mongoose.model<UserInterface>('User', UserSchema);
 //       }
 //     });
 
-User.updateOne({email:'imjoel@gmail.com'}, {pass: 'newPassJoel'}).then((result) => {
-    console.log(result);
-  }).catch((error) => {
-    console.log(error);
-  });
-    
+// User.updateOne({email: 'daniel213@gmail.com'}, {password: 'thenewDaniPass'}).then((result) => {
+//   console.log(result);
+// }).catch((error) => {
+//   console.log(error);
+// });
+
+// User.findOneAndRemove({email: 'javi@gmail.com'}).then((result) => {
+//   console.log(result);
+// }).catch((error) => {
+//   console.log(error);
+// });
+
 
 // function(err:string, data:string) {
-    //   if (err) {
-    //     console.log(err);
-    //   } else {
-    //     console.log(data);
-    //   }
-    // });
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     console.log(data);
+//   }
+// });
