@@ -1,9 +1,9 @@
 import * as userM from './index'
 
 const user = new userM.User({
-  name: 'francisco',
-  email: 'francisco@gmail.com',
-  password: '01001francisco$$',
+  name: 'miguel',
+  email: 'migul@gmail.com',
+  password: 'asdasd$$',
 });
 
 user.save().then((result) => {
